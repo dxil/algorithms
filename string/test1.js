@@ -67,25 +67,45 @@ function isRepeat(str, s) {
   return ~str.indexOf(s)
 }
 
-let ll = lengthOfLongestSubstring('aab')
-console.log(ll)
+// let ll = lengthOfLongestSubstring('aab')
+// console.log(ll)
 
 // 最快的答案 80ms 找到相等的就截断字符串 思路： 优化的移动窗口
 // 分析： https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/solution/
-var lengthOfLongestSubstring = function(s) {
-  let substr = '', maxLength = 0;
-  // find the next substring that longeer than previous to replace previous substring
-  for (var i = 0; i < s.length; i++) {
-      let findIndex = substr.indexOf(s[i]);
-      if (~findIndex) {
-          substr = substr.substring(findIndex + 1);
-      }
-      substr += s[i];
-      if (substr.length > maxLength) {
-          maxLength = substr.length;
-      }
+// var lengthOfLongestSubstring = function(s) {
+//   let substr = '', maxLength = 0;
+//   // find the next substring that longeer than previous to replace previous substring
+//   for (var i = 0; i < s.length; i++) {
+//       let findIndex = substr.indexOf(s[i]);
+//       if (~findIndex) {
+//           substr = substr.substring(findIndex + 1);
+//       }
+//       substr += s[i];
+//       if (substr.length > maxLength) {
+//           maxLength = substr.length;
+//       }
+//   }
+//   return maxLength;
+// };
+
+function lengthOfLongestSubstring (str) {
+  let longest = ''
+  let p = 0
+  let temp = ''
+  for (let i = 0; i < str.length; i++) {
+    let index = temp.indexOf(str[i])
+    if (~index) {
+      temp = temp.substring(index+1, i)
+    }
+    temp += str[i]
+    if (temp.length > longest.length) {
+      longest = temp
+    }
   }
-  return maxLength;
-};
+  console.log('longest:', longest)
+  return longest.length
+}
+
+lengthOfLongestSubstring("abcabcbb")
 
 // 浅析 暴力法 移动窗口法 优化的移动窗口法
