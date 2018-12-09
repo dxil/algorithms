@@ -69,3 +69,4 @@ var simplifyPath = function(path) {
   
   return '/' + res.join('/');
 };
+
