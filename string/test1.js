@@ -26,6 +26,8 @@
 // 解释: 因为无重复字符的最长子串是 "wke"，所以其长度为 3。
 //      请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
 
+
+// 我的low b思路， 比如 baab 遇到第一个重复的字符就停止，重复这个过程 第一次遍历最长为 ba， 删除 b 以后 aab继续这个过程 第二次最长是a然后以此类推
 function lengthOfLongestSubstring (s) {
   var l = s.length
   s = s.split('')
