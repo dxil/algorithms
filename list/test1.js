@@ -1,25 +1,22 @@
-
-
-
-//节点构造函数
-function Node(val){
+// 节点构造函数
+function Node (val) {
   this.val = val
   this.next = null
 }
-//定义链表
-function List(array){
+// 定义链表
+function List (array) {
   this.head = null
-  let i = 0,temp = null
-  while(i < array.length){
-      if( i === 0){
-          this.head = new Node(array[i])
-          temp = this.head
-      }else{
-          let newNode = new Node(array[i])
-          temp.next = newNode
-          temp = temp.next
-      }
-      i++
+  let i = 0, temp = null
+  while (i < array.length) {
+    if (i === 0) {
+      this.head = new Node(array[i])
+      temp = this.head
+    } else {
+      let newNode = new Node(array[i])
+      temp.next = newNode
+      temp = temp.next
+    }
+    i++
   }
   return this.head
 }
@@ -51,24 +48,22 @@ let reverseList = function(head) {
         prev = current;
         current = next;
     }
- 
+
     return prev;
 };
 */
 // 递归
-let reverseList = function(head) {
+let reverseList = function (head) {
   console.log(head)
-  if (!head || !head.next) return head;
-  let next = reverseList(head.next);
+  if (!head || !head.next) return head
+  let next = reverseList(head.next)
   console.log(next)
   console.log(head)
-  head.next.next = head;
-  head.next = null;
-  return next;
-};
+  head.next.next = head
+  head.next = null
+  return next
+}
 
 // 1 2 3 4 5
 
-
-
-console.log(reverseList(List([1,2,3,4,5])))
+console.log(reverseList(List([1, 2, 3, 4, 5])))

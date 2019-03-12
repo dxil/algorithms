@@ -37,48 +37,6 @@
  * @return {boolean}
  * 
  */
-// var checkInclusion = function(s1, s2) {
-//   let obj = formatStrToObj(s1)
-//   let cObj = JSON.parse(JSON.stringify(obj))
-//   let isCover = false
-//   for (let i = 0; i < s2.length; i++) {
-//     if ((obj[s2[i]] === undefined) || (cObj[s2[i]] === -1)) {
-//       if (validateObj(cObj)) {
-//         return true
-//       } else {
-//         cObj = JSON.parse(JSON.stringify(obj))
-//       }
-//     } else {
-//       --cObj[s2[i]]
-//     }
-//   }
-//   return validateObj(cObj)
-// };
-
-// // abcds
-// function formatStrToObj (s1) {
-//   let obj = {}
-//   for (let i = 0; i < s1.length; i++) {
-//     obj[s1[i]] = 1
-//     if(obj[s1[i]] !== undefined) {
-//       obj[s1[i]]++
-//     }else {
-//       obj[s1[i]] = 0
-//     }
-//   }
-//   return obj
-// }
-
-// function validateObj (obj) {
-//   console.log(obj)
-//   let isCover = true
-//   for (let o in obj) {
-//     if (obj[o] !== 0) {
-//       isCover = false
-//     }
-//   }
-//   return isCover
-// }
 
 // var checkInclusion = function(s1, s2) {
 //   s1 = s1.split('').sort().join('')
